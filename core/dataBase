@@ -1,0 +1,22 @@
+{
+  "todoList": [
+    {
+      "id": "6e7375d5-aa83-4eb4-aa9f-10a2bac5493e",
+      "date": "2023-09-12T15:34:44.227Z",
+      "content": "Primeira TODO atualizada",
+      "done": true
+    },
+    {
+      "id": "3ce2f290-3734-4340-918e-beac58477066",
+      "date": "2023-09-12T15:34:44.236Z",
+      "content": "Terceira TODO",
+      "done": false
+    },
+    {
+      "id": "fa752f73-c89c-46e2-8681-9a40c8819f7b",
+      "date": "2023-09-12T15:34:44.244Z",
+      "content": "Quarta TODO",
+      "done": false
+    }
+  ]
+}
