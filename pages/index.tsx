@@ -6,19 +6,20 @@ const bg = "/bg.jpeg";
 
 interface Todo {
   id: string;
-  date: string;
   content: string;
-  completed: boolean;
 }
 
 export default function Home() {
-  const [todoList, setTodoList] = useState<Todo[] | []>([]);
+  const [page, setPage] = useState(1);
+  const [todoList, setTodoList] = useState<Todo[]>([]);
 
   useEffect(() => {
-    todoController.get().then((todos) => {
-      setTodoList(todos.todoList);
+    todoController.get({ page }).then(({ todoList }) => {
+      setTodoList(todoList);
     });
   }, []);
+
+  console.log(todoList);
 
   return (
     <main>
@@ -86,8 +87,8 @@ export default function Home() {
 
             <tr>
               <td colSpan={4} align="center" style={{ textAlign: "center" }}>
-                <button data-type="load-more">
-                  Carregar mais{" "}
+                <button data-type="load-more" onClick={() => setPage(page + 1)}>
+                  Página {page}, Carregar mais{" "}
                   <span
                     style={{
                       display: "inline-block",
